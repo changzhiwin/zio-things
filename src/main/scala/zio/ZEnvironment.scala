@@ -10,6 +10,10 @@ trait ZEnvironment[+R] {
 
 }
 
+object ZEnvironment {
+  def apply() = new ZEnvironmentLive(Map.empty[ClassTag[_], Any])
+}
+
 // what is the actually type of the K part of Map[ClassTag[_], Any]?
 // val int = implicitly[ClassTag[String]]
 // val str = implicitly[ClassTag[Int]]
